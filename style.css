@@ -1,1 +1,248 @@
+/* Configurações Gerais e Variáveis */
+:root {
+    --bg-color: #f4f7f5;
+    --text-color: #2c3e50;
+    --card-bg: #ffffff;
+    --primary-color: #27ae60;
+    --primary-hover: #219653;
+    --secondary-color: #e67e22;
+    --secondary-hover: #d35400;
+    --header-bg: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
+/* Variáveis para o Modo Escuro (Dark Mode) */
+[data-theme="dark"] {
+    --bg-color: #1a252f;
+    --text-color: #ecf0f1;
+    --card-bg: #2c3e50;
+    --primary-color: #2ecc71;
+    --primary-hover: #27ae60;
+    --header-bg: #2c3e50;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Cabeçalho / Menu */
+.main-header {
+    background-color: var(--header-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Botões */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.btn-theme {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    padding: 8px 15px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    font-size: 1rem;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 12px 24px;
+    font-size: 1rem;
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-hover);
+}
+
+/* Seções Principais */
+section {
+    padding: 60px 5%;
+    text-align: center;
+}
+
+/* Seção Início (Hero) */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    color: white;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hidden-msg {
+    margin-top: 15px;
+    font-weight: bold;
+    min-height: 24px;
+}
+
+/* Seção Pilares (Cards) */
+.section-title {
+    margin-bottom: 40px;
+}
+
+.section-title h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    width: 300px;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image-placeholder {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.card h4 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+/* Seção Ações / Fatos */
+.action-section {
+    background-color: var(--card-bg);
+    transition: background-color 0.3s;
+}
+
+.fact-box {
+    margin: 20px auto 0;
+    padding: 20px;
+    max-width: 600px;
+    border-left: 5px solid var(--secondary-color);
+    background-color: var(--bg-color);
+    border-radius: 4px;
+    font-style: italic;
+    transition: background-color 0.3s;
+}
+
+/* Seção Contato */
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--header-bg);
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+    transition: background-color 0.3s;
+}
